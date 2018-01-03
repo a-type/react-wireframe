@@ -1,0 +1,32 @@
+{
+  "name": "react-wireframe",
+  "version": "0.1.0",
+  "description": "A set of prototype components to help decouple design and function in your app development process",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "ux",
+    "prototype",
+    "wireframe"
+  ],
+  "author": "Grant Forrest <gaforres@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.3",
+    "@storybook/addon-links": "^3.3.3",
+    "@storybook/react": "^3.3.3",
+    "babel-core": "^6.26.0"
+  }
+}
