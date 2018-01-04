@@ -1,4 +1,4 @@
-# react-boilerplate
+# react-wireframe
 
 Build your React app without providing a UI by filling it in with this placeholder component.
 
