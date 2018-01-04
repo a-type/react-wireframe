@@ -9,7 +9,13 @@ export default styled.input`
   padding: 0;
   margin: 0;
 
-  &:hover, &:active, &:focus {
+  &:hover:not(:disabled) {
     border: 1px solid #e2e2e2;
+  }
+
+  &:active:not(:disabled), &:focus:not(:disabled) {
+    border: 1px solid #d2d2d2;
+    background: white;
+    outline: none;
   }
 `;
