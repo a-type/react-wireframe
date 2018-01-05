@@ -6,27 +6,34 @@ import DefaultBehaviors from '../Behaviors';
 import omit from '../../util/omit';
 
 const propsOrMessage = props => JSON.stringify(props) === '{}' ? 'No props' : props;
-const controlledProps = ['Container', 'Renderer', 'editable', 'behaviors', 'Behaviors'];
+const controlledProps = ['wireframe', 'wireframeComponents'];
 
 class Wireframe extends React.Component {
   static propTypes = {
-    editable: PropTypes.bool,
-    behaviors: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      run: PropTypes.func.isRequired,
-    })),
-
-    Container: PropTypes.func,
-    Renderer: PropTypes.func,
-    Behaviors: PropTypes.func,
+    wireframe: PropTypes.shape({
+      editable: PropTypes.bool,
+      behaviors: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        run: PropTypes.func.isRequired,
+      })),
+    }),
+    wireframeComponents: PropTypes.shape({
+      Container: PropTypes.func,
+      Renderer: PropTypes.func,
+      Behaviors: PropTypes.func,
+    }),
   };
 
   static defaultProps = {
-    Container: WireframeContainer,
-    Renderer: Json,
-    editable: false,
-    Behaviors: DefaultBehaviors,
-    behaviors: [],
+    wireframe: {
+      editable: false,
+      behaviors: [],
+    },
+    wireframeComponents: {
+      Container: WireframeContainer,
+      Behaviors: DefaultBehaviors,
+      Renderer: Json,
+    },
   };
 
   constructor(props) {
@@ -73,8 +80,10 @@ class Wireframe extends React.Component {
   };
 
   render() {
-    const { Container, Renderer, editable, behaviors, Behaviors } = this.props;
+    const { Container = WireframeContainer, Renderer = Json, Behaviors = DefaultBehaviors } = this.props.wireframeComponents;
+    const { editable = false, behaviors = [] } = this.props.wireframe;
     const { data } = this.state;
+
     return (
       <Container>
         <Renderer data={propsOrMessage(data)} editable={editable} onDataChanged={this.handleDataChanged} />
