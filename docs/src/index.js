@@ -4,9 +4,10 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 
-import { injectGlobal } from 'styled-components';
+import { ThemeProvider, injectGlobal } from 'styled-components';
+import theme from './theme';
 
-import TextMark from './components/TextMark';
+import Intro from './components/sections/Intro';
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -26,9 +27,11 @@ const store = configureStore();
 
 ReactDom.render(
   <Provider store={store}>
-    <div>
-      <TextMark>react-wireframe</TextMark>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Intro />
+      </div>
+    </ThemeProvider>
   </Provider>,
   document.getElementById('main'),
 );

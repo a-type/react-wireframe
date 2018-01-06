@@ -32,6 +32,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
@@ -45,10 +46,14 @@
     "prettier": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-grits": "0.0.4",
     "react-redux": "^5.0.6",
     "react-split-pane": "^0.1.74",
     "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "shakespeare-data": "^2.5.0",
     "style-loader": "^0.19.1",
+    "tinycolor2": "^1.4.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }

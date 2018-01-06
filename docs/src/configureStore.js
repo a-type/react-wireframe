@@ -1,8 +1,12 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import reducer from './reducers';
+import createSagaMiddleware from 'redux-saga';
+import saga from './sagas';
 
-export default function configureStore(initialState = {}) {
-  const enhancers = [];
+const sagaMiddleware = createSagaMiddleware();
+
+export default function configureStore(initialState) {
+  const enhancers = [applyMiddleware(sagaMiddleware)];
 
   const composeEnhancers =
     process.env.NODE_ENV !== 'production' &&
@@ -16,6 +20,8 @@ export default function configureStore(initialState = {}) {
     initialState,
     composeEnhancers(...enhancers),
   );
+
+  sagaMiddleware.run(saga);
 
   if (module.hot) {
     module.hot.accept('./reducers/index', () => {
