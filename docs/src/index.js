@@ -10,8 +10,7 @@ import theme from './theme';
 import Page from './components/PageSections';
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700');
   html, body {
     margin: 0;
     padding: 0;

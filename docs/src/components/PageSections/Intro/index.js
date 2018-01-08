@@ -4,9 +4,10 @@ import AppWireframe from '../../AppWireframe';
 import PanelGroup from 'react-panelgroup';
 import Container from './Container';
 import Split from './Split';
-import SplitLeft from './SplitLeft';
-import SplitRight from './SplitRight';
+import LeftSide from './LeftSide';
+import RightSide from './RightSide';
 import TextMark from '../../TextMark';
+import H2 from '../../H2';
 
 export default class Intro extends React.Component {
   componentDidMount() {
@@ -29,18 +30,24 @@ export default class Intro extends React.Component {
   render() {
     return (
       <Container>
-        <PanelGroup borderColor="black">
+        <PanelGroup>
           <Split first>
-            <SplitLeft>
-              <TextMark>react-wireframe</TextMark>
+            <LeftSide>
+              <div>
+                <TextMark>react-wireframe</TextMark>
+                <H2>streamline development and collaborate better</H2>
+              </div>
               <AppWireframe innerRef={c => this.wireframe = c} />
-            </SplitLeft>
+            </LeftSide>
           </Split>
           <Split>
-            <SplitRight>
-              <TextMark filled>react-wireframe</TextMark>
+            <RightSide>
+              <div>
+                <TextMark filled>react-wireframe</TextMark>
+                <H2>streamline development and collaborate better</H2>
+              </div>
               <AppImplemented innerRef={c => this.implemented = c} />
-            </SplitRight>
+            </RightSide>
           </Split>
         </PanelGroup>
       </Container>

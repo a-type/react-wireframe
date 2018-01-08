@@ -13,8 +13,8 @@ export default styled.div`
       right: 0;
       top: 50%;
       transform: translateX(50%);
-      font-size: 32px;
-      color: black;
+      font-size: 48px;
+      color: ${({ theme }) => theme.colors.accents[1]};
     }
     ` : css`
     &::after {
@@ -23,8 +23,8 @@ export default styled.div`
       left: 0;
       top: 50%;
       transform: translateX(-50%);
-      font-size: 32px;
-      color: black;
+      font-size: 48px;
+      color: ${({ theme }) => theme.colors.accents[1]};
     }
     `
   }
