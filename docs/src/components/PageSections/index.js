@@ -1,8 +1,9 @@
 import React from 'react';
 import Intro from './Intro';
+import Container from './Container';
 
 export default () => (
-  <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100vw', height: '0' }}>
+  <Container>
     <Intro />
-  </div>
+  </Container>
 );

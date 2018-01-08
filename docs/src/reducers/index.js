@@ -1,22 +1,23 @@
 import lipsum from 'lorem-ipsum';
+import theme from '../theme';
 
 const defaultState = {
   stories: {},
-  profileImage: '#A9EEE6',
+  profileImage: theme.colors.accents[3],
   name: lipsum({ count: 2, units: 'words' }),
   bio: 'I\'m a fake social network account! I love latin.',
   suggestions: [
     {
       name: lipsum({ count: 2, units: 'words' }),
-      profileImage: '#FEFAEC',
+      profileImage: theme.colors.accents[2],
     },
     {
       name: lipsum({ count: 2, units: 'words' }),
-      profileImage: '#F9A1BC',
+      profileImage: theme.colors.accents[1],
     },
     {
       name: lipsum({ count: 2, units: 'words' }),
-      profileImage: '#625772',
+      profileImage: theme.colors.accents[0],
     },
   ],
 };

@@ -7,7 +7,7 @@ function* simulateStories() {
   for (let i = 0; i < 10; i++) {
     yield delay(500 + (Math.random() * 1000));
     yield put(actions.addStory({
-      id: `${Math.random()}`,
+      id: `${Math.random()}`.substring(2),
       text: lipsum({ count: 3 }),
       likes: Math.floor(Math.random() * 10),
     }));

@@ -47,7 +47,7 @@ export default class Node extends React.Component {
     Value: DefaultValue,
     depth: 0,
     dataType: 'object',
-    dataKey: '',
+    dataKey: 'props',
     leaf: false,
     editable: false,
     Field: DefaultField,
