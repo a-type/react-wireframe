@@ -25,7 +25,19 @@ export default ({ innerRef }) => (
       }}
     />
     <Feed
-      Story={Story}
+      Story={
+        props => (
+          <Story
+            {...props}
+            wireframe={{
+              name: 'Story',
+              behaviors: [
+                { name: 'like', run: data => data.like() },
+              ],
+            }}
+          />
+        )
+      }
     />
     <Bio
       wireframe={{
