@@ -4,8 +4,8 @@ export default styled.div`
   margin: auto;
   max-width: 1000px;
   width: 100%;
-  height: 95vh;
   justify-items: center;
+  min-height: 100%;
 
   display: grid;
   grid-template-areas:

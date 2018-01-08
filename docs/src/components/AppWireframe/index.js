@@ -1,6 +1,9 @@
 import React from 'react';
 import Layout from '../AppLayout';
-import Feed from '../../containers/wireframes/Feed';
+// feed is particular... we will use the outer container, then provide a
+// different Story component
+import Feed from '../../containers/implementations/Feed';
+import Story from '../../containers/wireframes/Story';
 import ProfileImage from '../../containers/wireframes/ProfileImage';
 import RefreshButton from '../../containers/wireframes/RefreshButton';
 import Bio from '../../containers/wireframes/Bio';
@@ -22,9 +25,7 @@ export default ({ innerRef }) => (
       }}
     />
     <Feed
-      wireframe={{
-        name: 'Feed'
-      }}
+      Story={Story}
     />
     <Bio
       wireframe={{
