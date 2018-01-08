@@ -7,9 +7,8 @@ import RefreshButton from '../../containers/implementations/RefreshButton';
 import Bio from '../../containers/implementations/Bio';
 import Suggestions from '../../containers/implementations/Suggestions';
 
-export default () => (
-  <Layout>
-    <TextMark filled>react-wireframe</TextMark>
+export default ({ innerRef }) => (
+  <Layout innerRef={innerRef}>
     <RefreshButton />
     <ProfileImage />
     <Feed />

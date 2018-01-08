@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import WireframeContainer from './styles/WireframeContainer';
+import WireframeName from './styles/WireframeName';
 import Json from '../Json';
 import DefaultBehaviors from '../Behaviors';
 import omit from '../../util/omit';
 
-const propsOrMessage = props => JSON.stringify(props) === '{}' ? 'No props' : props;
+const propsOrMessage = props => Object.keys(props).length === 0 ? 'No props' : props;
 const controlledProps = ['wireframe', 'wireframeComponents'];
 
 class Wireframe extends React.Component {
   static propTypes = {
     wireframe: PropTypes.shape({
+      name: PropTypes.string,
       editable: PropTypes.bool,
       behaviors: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -21,6 +23,7 @@ class Wireframe extends React.Component {
       Container: PropTypes.func,
       Renderer: PropTypes.func,
       Behaviors: PropTypes.func,
+      Name: PropTypes.func,
     }),
   };
 
@@ -33,6 +36,7 @@ class Wireframe extends React.Component {
       Container: WireframeContainer,
       Behaviors: DefaultBehaviors,
       Renderer: Json,
+      Name: WireframeName,
     },
   };
 
@@ -80,13 +84,16 @@ class Wireframe extends React.Component {
   };
 
   render() {
-    const { Container = WireframeContainer, Renderer = Json, Behaviors = DefaultBehaviors } = this.props.wireframeComponents;
-    const { editable = false, behaviors = [] } = this.props.wireframe;
+    const { Container = WireframeContainer, Renderer = Json, Behaviors = DefaultBehaviors, Name = WireframeName } = this.props.wireframeComponents;
+    const { editable = false, behaviors = [], name } = this.props.wireframe;
     const { data } = this.state;
 
     return (
       <Container>
-        <Renderer data={propsOrMessage(data)} editable={editable} onDataChanged={this.handleDataChanged} />
+        <div>
+          {name && <Name>{`<${name}/>`}</Name>}
+          <Renderer data={propsOrMessage(data)} editable={editable} onDataChanged={this.handleDataChanged} />
+        </div>
         <Behaviors behaviors={behaviors} runBehavior={this.runBehavior} />
       </Container>
     );

@@ -2,9 +2,11 @@ import React from 'react';
 import Text from './Text';
 
 export default ({
-  bio
+  bio,
+  name,
 }) => (
   <Text>
+    <h2>{name}</h2>
     {bio}
   </Text>
 );

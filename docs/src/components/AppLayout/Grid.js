@@ -3,14 +3,12 @@ import styled from 'styled-components';
 export default styled.div`
   margin: auto;
   max-width: 1000px;
-  overflow-y: hidden;
   width: 100%;
   height: 95vh;
   justify-items: center;
 
   display: grid;
   grid-template-areas:
-    "title title title"
     ". refreshButton ."
     "profileImage feed suggestions"
     "bio feed suggestions"
@@ -20,21 +18,18 @@ export default styled.div`
   grid-column-gap: 18px;
 
   & > *:nth-child(1) {
-    grid-area: title;
-  }
-  & > *:nth-child(2) {
     grid-area: refreshButton;
   }
-  & > *:nth-child(3) {
+  & > *:nth-child(2) {
     grid-area: profileImage;
   }
-  & > *:nth-child(4) {
+  & > *:nth-child(3) {
     grid-area: feed;
   }
-  & > *:nth-child(5) {
+  & > *:nth-child(4) {
     grid-area: bio;
   }
-  & > *:nth-child(6) {
+  & > *:nth-child(5) {
     grid-area: suggestions;
   }
 `;

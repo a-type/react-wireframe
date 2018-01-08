@@ -1,10 +1,13 @@
 export default {
   colors: {
-    text: '#404969',
+    text: '#222',
     background: '#fff',
-    accent: {
-      light: '#FF7F50',
-      dark: '#404969'
-    }
+    border: '#d2d2d2',
+    accents: [
+      '#625772',
+      '#F9A1BC',
+      '#FEFAEC',
+      '#A9EEE6'
+    ]
   }
 };

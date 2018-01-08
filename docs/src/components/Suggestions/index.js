@@ -8,7 +8,7 @@ export default ({ suggestions }) => (
     <div>You might also like...</div>
     {suggestions.map(suggestion => (
       <Item key={suggestion.name}>
-        <ProfileImage imageSrc={suggestion.profileImage} width="32px" height="32px" />
+        <ProfileImage color={suggestion.profileImage} size="32px" />
         <span>{suggestion.name}</span>
       </Item>
     ))}

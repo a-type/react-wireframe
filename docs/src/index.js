@@ -7,7 +7,7 @@ import configureStore from './configureStore';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import theme from './theme';
 
-import Intro from './components/sections/Intro';
+import Page from './components/PageSections';
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -29,7 +29,7 @@ ReactDom.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
       <div>
-        <Intro />
+        <Page />
       </div>
     </ThemeProvider>
   </Provider>,

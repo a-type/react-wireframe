@@ -11,7 +11,7 @@ import DefaultField from '../Field';
 import describeFunction from '../../util/describeFunction';
 import printObject from '../../util/printObject';
 
-const isNested = data => !!data && (typeof data === 'object') && Object.keys(data).length > 0;
+const isNested = data => !!data && (typeof data === 'object') && (Object.keys(data).length > 0 || data.length > 0);
 const getType = data => (data instanceof Array)
   ? 'array'
   : (typeof data === 'function')
@@ -59,6 +59,14 @@ export default class Node extends React.Component {
     this.state = {
       expanded: isNested(props.data) && props.depth < 3,
     };
+  }
+
+  componentDidUpdate(oldProps) {
+    if (this.props.data !== oldProps.data) {
+      this.setState({
+        expanded: isNested(this.props.data) && this.props.depth < 3,
+      });
+    }
   }
 
   toggleExpanded = ev => {

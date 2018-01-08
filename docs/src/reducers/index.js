@@ -1,29 +1,22 @@
-import shakespeare from '../images/shakespeare.jpg';
-import marlowe from '../images/marlowe.jpg';
-import kyd from '../images/kyd.jpg';
-import chapman from '../images/chapman.jpg';
-import jonson from '../images/jonson.jpg';
+import lipsum from 'lorem-ipsum';
 
 const defaultState = {
   stories: {},
-  profileImage: shakespeare,
-  bio: 'Like a bard, if bards were cool',
+  profileImage: '#A9EEE6',
+  name: lipsum({ count: 2, units: 'words' }),
+  bio: 'I\'m a fake social network account! I love latin.',
   suggestions: [
     {
-      name: 'Christopher Marlowe',
-      profileImage: marlowe,
+      name: lipsum({ count: 2, units: 'words' }),
+      profileImage: '#FEFAEC',
     },
     {
-      name: 'Thomas Kyd',
-      profileImage: kyd,
+      name: lipsum({ count: 2, units: 'words' }),
+      profileImage: '#F9A1BC',
     },
     {
-      name: 'George Chapman',
-      profileImage: chapman,
-    },
-    {
-      name: 'Ben Jonson',
-      profileImage: jonson,
+      name: lipsum({ count: 2, units: 'words' }),
+      profileImage: '#625772',
     },
   ],
 };
