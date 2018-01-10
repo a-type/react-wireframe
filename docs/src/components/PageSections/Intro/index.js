@@ -2,12 +2,18 @@ import React from 'react';
 import AppImplemented from '../../AppImplemented';
 import AppWireframe from '../../AppWireframe';
 import PanelGroup from 'react-panelgroup';
-import Container from './Container';
+import Section from '../Section';
 import Split from './Split';
 import LeftSide from './LeftSide';
 import RightSide from './RightSide';
 import TextMark from '../../TextMark';
 import H2 from '../../H2';
+
+const Container = Section.extend`
+  background: linear-gradient(33deg, ${({ theme }) => `${theme.colors.accents[2]}, ${theme.colors.accents[0]}`});
+  flex-basis: 95vh;
+  width: 100%;
+`;
 
 export default class Intro extends React.Component {
   componentDidMount() {

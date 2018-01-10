@@ -51,6 +51,7 @@
     "react-panelgroup": "^1.0.5",
     "react-redux": "^5.0.6",
     "react-split-pane": "^0.1.74",
+    "react-syntax-highlighter": "^6.1.1",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
     "shakespeare-data": "^2.5.0",

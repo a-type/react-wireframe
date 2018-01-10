@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Section from './Section';
 
 export default styled.div`
   display: flex;
@@ -6,6 +7,10 @@ export default styled.div`
   min-height: 100vh;
   width: 100vw;
   height: 0;
+  overflow: overlay;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
-  background: linear-gradient(33deg, ${({ theme }) => `${theme.colors.accents[2]}, ${theme.colors.accents[0]}`});
+  & > ${Section} {
+    flex: 0 0 auto;
+  }
 `;

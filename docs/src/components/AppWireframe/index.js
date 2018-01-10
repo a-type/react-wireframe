@@ -41,7 +41,10 @@ export default ({ innerRef }) => (
     />
     <Bio
       wireframe={{
-        name: 'Bio'
+        name: 'Bio',
+        behaviors: [
+          { name: 'follow', run: data => data.follow() },
+        ],
       }}
     />
     <Suggestions

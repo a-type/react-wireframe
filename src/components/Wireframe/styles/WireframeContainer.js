@@ -9,12 +9,13 @@ export default styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   & > *:first-child {
     flex: 1;
   }
   & > *:last-child {
     flex: 0 0 auto;
+    margin-top: 8px;
   }
 `;

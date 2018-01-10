@@ -6,6 +6,7 @@ const defaultState = {
   profileImage: theme.colors.accents[3],
   name: lipsum({ count: 2, units: 'words' }),
   bio: 'I\'m a fake social network account! I love latin.',
+  followed: false,
   suggestions: [
     {
       name: lipsum({ count: 2, units: 'words' }),
@@ -47,6 +48,11 @@ export default (state = defaultState, action) => {
             likes: state.stories[action.payload.storyId].likes + 1,
           },
         },
+      };
+    case 'FOLLOW':
+      return {
+        ...state,
+        followed: true,
       };
     default:
       return state;
