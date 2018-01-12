@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = ({ publicPath = '/' } = { publicPath: '/' }) => ({
+module.exports = ({ publicPath = '/react-wireframe' } = { publicPath: '/react-wireframe' }) => ({
   devtool: 'cheap-module-eval-source-map',
   output: {
     path: path.resolve(__dirname, 'build'),
