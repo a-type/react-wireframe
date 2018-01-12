@@ -11,6 +11,7 @@ import H2 from '../../H2';
 
 const Container = Section.extend`
   background: linear-gradient(33deg, ${({ theme }) => `${theme.colors.accents[2]}, ${theme.colors.accents[0]}`});
+  height: 95vh;
   flex-basis: 95vh;
   width: 100%;
 `;
@@ -34,11 +35,13 @@ export default class Intro extends React.Component {
   };
 
   render() {
+    const { containerWidth } = this.props;
+
     return (
       <Container>
         <PanelGroup>
           <Split first>
-            <LeftSide>
+            <LeftSide width={containerWidth}>
               <div>
                 <TextMark>react-wireframe</TextMark>
                 <H2>streamline development and collaborate better</H2>
@@ -47,7 +50,7 @@ export default class Intro extends React.Component {
             </LeftSide>
           </Split>
           <Split>
-            <RightSide>
+            <RightSide width={containerWidth}>
               <div>
                 <TextMark filled>react-wireframe</TextMark>
                 <H2>streamline development and collaborate better</H2>

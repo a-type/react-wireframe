@@ -5,10 +5,8 @@ export default styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100vw;
-  height: 0;
-  overflow: overlay;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  width: 100%;
+  margin-bottom: 32px;
 
   & > ${Section} {
     flex: 0 0 auto;

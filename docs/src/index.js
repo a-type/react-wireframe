@@ -20,6 +20,10 @@ injectGlobal`
   * {
     box-sizing: border-box;
   }
+
+  p {
+    line-height: 1.25;
+  }
 `;
 
 const store = configureStore();
@@ -27,7 +31,7 @@ const store = configureStore();
 ReactDom.render(
   <Provider store={store}>
     <ThemeProvider theme={theme}>
-      <div>
+      <div style={{ width: '100%' }}>
         <Page />
       </div>
     </ThemeProvider>

@@ -21,7 +21,7 @@ const Code = withTheme(({ theme, children }) => {
       textShadow: 'none',
     },
     comment: {
-      color: color(theme.colors.text).lighten(0.5).toHexString(),
+      color: color(theme.colors.text).lighten(50).toHexString(),
     },
     punctuation: {
       color: 'inherit',
@@ -45,7 +45,7 @@ const Code = withTheme(({ theme, children }) => {
       color: theme.colors.accents[2],
     },
     string: {
-      color: theme.colors.accents[0],
+      color: theme.colors.accents[3],
     },
     char: {
       color: theme.colors.accents[0],
@@ -60,7 +60,7 @@ const Code = withTheme(({ theme, children }) => {
       color: theme.colors.accents[2],
     },
     function: {
-      color: color(theme.colors.accents[1]).darken(20).toString('hex6'),
+      color: color(theme.colors.accents[1]).lighten(20).toString('hex6'),
     },
   };
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
   position: absolute;
-  width: 100vw;
+  width: ${({ width }) => width}px;
   height: 100%;
   display: flex;
   flex-direction: column;

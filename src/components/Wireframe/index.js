@@ -31,6 +31,7 @@ class Wireframe extends React.Component {
     wireframe: {
       editable: false,
       behaviors: [],
+      name: 'Wireframe',
     },
     wireframeComponents: {
       Container: WireframeContainer,
