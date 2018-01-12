@@ -2,12 +2,15 @@
   "name": "react-wireframe",
   "version": "0.1.0",
   "description": "A set of prototype components to help decouple design and function in your app development process",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "docs": "node ./docs/src/webpack.devserver.js"
+    "docs": "node ./docs/src/webpack.devserver.js",
+    "build-lib": "babel src --out-dir dist",
+    "build-storybook": "build-storybook -c .storybook -o ./docs/storybook",
+    "build-docs": "webpack --config ./docs/src/webpack.config.js --output-path ./docs",
+    "build": "run-p build-*"
   },
   "keywords": [
     "react",
