@@ -1,5 +1,8 @@
 # react-wireframe
 
+[Homepage](https://a-type.github.io/react-wireframe)
+[Storybook](https://a-type.github.io/react-wireframe/storybook)
+
 Build your React app without providing a UI by filling it in with this placeholder component.
 
 Fits two big use cases:
